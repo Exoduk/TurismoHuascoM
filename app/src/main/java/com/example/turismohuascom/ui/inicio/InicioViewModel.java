@@ -1,16 +1,16 @@
-package com.example.turismohuascom.ui.notifications;
+package com.example.turismohuascom.ui.inicio;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class InicioViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public InicioViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("Este es el fragmento de inicio");
     }
 
     public LiveData<String> getText() {

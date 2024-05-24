@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">TurismoHuascoM</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">HUASCO TURISMO</string>
+    <string name="title_inicio">INICIO</string>
+    <string name="title_rutas">RUTAS</string>
+    <string name="title_servicios">SERVICIOS</string>
+    <string name="title_favoritos">FAVORITOS</string>
 </resources>
