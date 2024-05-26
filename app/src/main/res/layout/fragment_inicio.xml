@@ -6,17 +6,126 @@
     android:layout_height="match_parent"
     tools:context=".ui.inicio.InicioFragment">
 
-    <TextView
-        android:id="@+id/textInicio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <!-- Imagen de fondo -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/faro"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Villa La Angostura"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <!-- Subtítulo -->
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="¡Bienvenidos!\nNaturaleza, tranquilidad y calidad en los servicios"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <!-- Botones en ConstraintLayout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Botón 1 -->
+        <Button
+            android:id="@+id/btn_paseos"
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_marginStart="20dp"
+            android:drawableTop="@drawable/icono_favoritos"
+            android:padding="16dp"
+            android:text="Paseos, Atracciones y Actividades"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:background="@drawable/button_border"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_alojamientos" />
+
+        <!-- Botón 2 -->
+        <Button
+            android:id="@+id/btn_alojamientos"
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_border"
+            android:drawableTop="@drawable/icono_cama"
+            android:padding="20dp"
+            android:text="Alojamientos"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/btn_paseos"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Botón 3 -->
+        <Button
+            android:id="@+id/btn_servicios_turisticos"
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/button_border"
+            android:drawableTop="@drawable/icono_favoritos"
+            android:padding="16dp"
+            android:text="Servicios Turísticos"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_paseos"
+            app:layout_constraintEnd_toStartOf="@+id/btn_gastronomia"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Botón 4 -->
+        <Button
+            android:id="@+id/btn_gastronomia"
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_border"
+            android:drawableTop="@drawable/icono_favoritos"
+            android:padding="16dp"
+            android:text="Favoritos"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/btn_servicios_turisticos"
+            app:layout_constraintTop_toBottomOf="@+id/btn_alojamientos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

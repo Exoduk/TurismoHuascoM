@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Presentacion extends AppCompatActivity {
 
-    private static final int Duracion = 5000; // 3 segundos
+    private static final int Duracion = 2000; // 3 segundos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

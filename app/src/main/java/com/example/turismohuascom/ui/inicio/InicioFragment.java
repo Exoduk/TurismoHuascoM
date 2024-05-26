@@ -21,11 +21,13 @@ public class InicioFragment extends Fragment {
         InicioViewModel inicioViewModel =
                 new ViewModelProvider(this).get(InicioViewModel.class);
 
+
+
         binding = FragmentInicioBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textInicio;
-        inicioViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        //final TextView textView = binding.textInicio;
+        //inicioViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
