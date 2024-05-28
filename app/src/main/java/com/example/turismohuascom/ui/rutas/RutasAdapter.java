@@ -3,6 +3,7 @@ package com.example.turismohuascom.ui.rutas;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,9 +14,9 @@ import com.example.turismohuascom.R;
 import java.util.List;
 
 public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHolder> {
-    private List<String> rutasList;
+    private List<Ruta> rutasList;
 
-    public RutasAdapter(List<String> rutasList) {
+    public RutasAdapter(List<Ruta> rutasList) {
         this.rutasList = rutasList;
     }
 
@@ -29,8 +30,11 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
 
     @Override
     public void onBindViewHolder(@NonNull RutaViewHolder holder, int position) {
-        String ruta = rutasList.get(position);
-        holder.textViewRuta.setText(ruta);
+        Ruta ruta = rutasList.get(position);
+        holder.textViewRutaTitulo.setText(ruta.getTitulo());
+        holder.textViewRutaDescripcion.setText(ruta.getDescripcion());
+        holder.textViewRutaUbicacion.setText(ruta.getUbicacion());
+        holder.imageViewRuta.setImageResource(ruta.getImagen());
     }
 
     @Override
@@ -39,11 +43,17 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
     }
 
     public static class RutaViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewRuta;
+        ImageView imageViewRuta;
+        TextView textViewRutaTitulo;
+        TextView textViewRutaDescripcion;
+        TextView textViewRutaUbicacion;
 
         public RutaViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewRuta = itemView.findViewById(R.id.textViewRuta);
+            imageViewRuta = itemView.findViewById(R.id.imageViewRuta);
+            textViewRutaTitulo = itemView.findViewById(R.id.textViewRutaTitulo);
+            textViewRutaDescripcion = itemView.findViewById(R.id.textViewRutaDescripcion);
+            textViewRutaUbicacion = itemView.findViewById(R.id.textViewRutaUbicacion);
         }
     }
 }
