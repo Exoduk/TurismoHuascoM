@@ -1,5 +1,6 @@
 package com.example.turismohuascom.ui.rutas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,8 +39,18 @@ public class RutasFragment extends Fragment {
         // Obtener datos (ejemplo de datos ficticios, reemplazar con datos de la BD)
         rutasList = obtenerDatosDeLaBaseDeDatos();
 
-        // Configurar Adapter
-        adapter = new RutasAdapter(rutasList);
+        // Configurar Adapter con el OnItemClickListener
+        adapter = new RutasAdapter(rutasList, new RutasAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Ruta ruta) {
+                Intent intent = new Intent(getActivity(), RutaDetailActivity.class);
+                intent.putExtra("titulo", ruta.getTitulo());
+                intent.putExtra("descripcion", ruta.getDescripcion());
+                intent.putExtra("ubicacion", ruta.getUbicacion());
+                intent.putExtra("imagen", ruta.getImagen());
+                startActivity(intent);
+            }
+        });
         recyclerView.setAdapter(adapter);
 
         return root;

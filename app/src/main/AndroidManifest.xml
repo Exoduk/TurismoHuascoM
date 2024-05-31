@@ -27,6 +27,11 @@
             android:name=".MainActivity"
             android:exported="false" />
 
+        <!-- Nueva actividad para mostrar detalles de la ruta -->
+        <activity
+            android:name=".ui.rutas.RutaDetailActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package com.example.turismohuascom.ui.rutas;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +17,17 @@ import java.util.List;
 
 public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHolder> {
     private List<Ruta> rutasList;
+    private OnItemClickListener listener;
 
-    public RutasAdapter(List<Ruta> rutasList) {
+    // Interfaz para manejar los clics
+    public interface OnItemClickListener {
+        void onItemClick(Ruta ruta);
+    }
+
+    // Constructor modificado para aceptar el listener
+    public RutasAdapter(List<Ruta> rutasList, OnItemClickListener listener) {
         this.rutasList = rutasList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -35,6 +45,9 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
         holder.textViewRutaDescripcion.setText(ruta.getDescripcion());
         holder.textViewRutaUbicacion.setText(ruta.getUbicacion());
         holder.imageViewRuta.setImageResource(ruta.getImagen());
+
+        // Bind the click listener
+        holder.bind(ruta, listener);
     }
 
     @Override
@@ -54,6 +67,15 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
             textViewRutaTitulo = itemView.findViewById(R.id.textViewRutaTitulo);
             textViewRutaDescripcion = itemView.findViewById(R.id.textViewRutaDescripcion);
             textViewRutaUbicacion = itemView.findViewById(R.id.textViewRutaUbicacion);
+        }
+
+        public void bind(final Ruta ruta, final OnItemClickListener listener) {
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onItemClick(ruta);
+                }
+            });
         }
     }
 }
