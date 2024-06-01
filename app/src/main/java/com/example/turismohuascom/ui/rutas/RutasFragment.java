@@ -66,7 +66,7 @@ public class RutasFragment extends Fragment {
         // Implementa tu lógica para obtener los datos de la base de datos
         // Aquí solo hay un ejemplo con datos ficticios
         List<Ruta> datos = new ArrayList<>();
-        datos.add(new Ruta("Manush", "Cerveza artesanal, comidas y shows en vivo", "Av Bustillo 3950", R.drawable.ruta_faro));
+        datos.add(new Ruta("Manush", "Cerveza artesanal, comidas y shows en vivo nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn", "Av Bustillo 3950", R.drawable.ruta_faro));
         datos.add(new Ruta("Wesley Brewery", "Cálido ambiente alrededor de la clásica chimenea de Wesley", "20 de Febrero 415", R.drawable.ruta_faro));
         datos.add(new Ruta("Blest", "Excelente lugar para acompañar tu cerveza con unas tapas", "Av Bustillo 3970", R.drawable.ruta_faro));
         datos.add(new Ruta("Cervecería Patagonia", "Las mejores vistas de Bariloche", "Km 24", R.drawable.ruta_faro));
