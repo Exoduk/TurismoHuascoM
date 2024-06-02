@@ -1,7 +1,5 @@
 package com.example.turismohuascom.ui.rutas;
 
-import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.turismohuascom.R;
 
 import java.util.List;
@@ -19,12 +18,10 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
     private List<Ruta> rutasList;
     private OnItemClickListener listener;
 
-    // Interfaz para manejar los clics
     public interface OnItemClickListener {
         void onItemClick(Ruta ruta);
     }
 
-    // Constructor modificado para aceptar el listener
     public RutasAdapter(List<Ruta> rutasList, OnItemClickListener listener) {
         this.rutasList = rutasList;
         this.listener = listener;
@@ -41,12 +38,15 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
     @Override
     public void onBindViewHolder(@NonNull RutaViewHolder holder, int position) {
         Ruta ruta = rutasList.get(position);
-        holder.textViewRutaTitulo.setText(ruta.getTitulo());
+        holder.textViewRutaTitulo.setText(ruta.getId());
         holder.textViewRutaDescripcion.setText(ruta.getDescripcion());
         holder.textViewRutaUbicacion.setText(ruta.getUbicacion());
-        holder.imageViewRuta.setImageResource(ruta.getImagen());
 
-        // Bind the click listener
+        // Cargar imagen usando Glide
+        Glide.with(holder.imageViewRuta.getContext())
+                .load(ruta.getImagen())
+                .into(holder.imageViewRuta);
+
         holder.bind(ruta, listener);
     }
 

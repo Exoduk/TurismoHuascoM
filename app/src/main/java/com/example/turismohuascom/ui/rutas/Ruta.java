@@ -1,16 +1,22 @@
 package com.example.turismohuascom.ui.rutas;
 
 public class Ruta {
+    private String id;
     private String titulo;
     private String descripcion;
     private String ubicacion;
-    private int imagen;
+    private String imagen;
 
-    public Ruta(String titulo, String descripcion, String ubicacion, int imagen) {
+    public Ruta(String id, String titulo, String descripcion, String ubicacion, String imagen) {
+        this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.ubicacion = ubicacion;
         this.imagen = imagen;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getTitulo() {
@@ -25,8 +31,7 @@ public class Ruta {
         return ubicacion;
     }
 
-    public int getImagen() {
+    public String getImagen() {
         return imagen;
     }
 }
-
