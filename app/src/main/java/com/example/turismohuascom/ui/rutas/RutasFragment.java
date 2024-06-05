@@ -52,7 +52,6 @@ public class RutasFragment extends Fragment {
                 for (DocumentSnapshot document : task.getResult()) {
                     Ruta ruta = new Ruta(
                             document.getId(),
-                            document.getString("titulo"),
                             document.getString("descripcion"),
                             document.getString("direccion"),
                             document.getString("imagen")
@@ -64,7 +63,6 @@ public class RutasFragment extends Fragment {
                 // Manejar error
             }
         });
-
         return root;
     }
 

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "373537375993",
-    "project_id": "turismo-807f7",
-    "storage_bucket": "turismo-807f7.appspot.com"
+    "project_number": "286015997216",
+    "project_id": "turismo-huasco",
+    "storage_bucket": "turismo-huasco.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:373537375993:android:25d30151ae8109b65c8428",
+        "mobilesdk_app_id": "1:286015997216:android:97cfd16cb84b472e0b0345",
         "android_client_info": {
           "package_name": "com.example.turismohuascom"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDebnUiE-rYWtav_WO4RrvfQrkUVLq2sSg"
+          "current_key": "AIzaSyD05a7XFM1k8-DahoU5WaB5T3RMH9VI8Tw"
         }
       ],
       "services": {
