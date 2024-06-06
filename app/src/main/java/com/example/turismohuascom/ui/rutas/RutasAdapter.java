@@ -39,7 +39,6 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
     public void onBindViewHolder(@NonNull RutaViewHolder holder, int position) {
         Ruta ruta = rutasList.get(position);
         holder.textViewRutaTitulo.setText(ruta.getId());
-        holder.textViewRutaDescripcion.setText(ruta.getDescripcion());
         holder.textViewRutaUbicacion.setText(ruta.getUbicacion());
 
         // Cargar imagen usando Glide
@@ -58,14 +57,12 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
     public static class RutaViewHolder extends RecyclerView.ViewHolder {
         ImageView imageViewRuta;
         TextView textViewRutaTitulo;
-        TextView textViewRutaDescripcion;
         TextView textViewRutaUbicacion;
 
         public RutaViewHolder(@NonNull View itemView) {
             super(itemView);
             imageViewRuta = itemView.findViewById(R.id.imageViewRuta);
             textViewRutaTitulo = itemView.findViewById(R.id.textViewRutaTitulo);
-            textViewRutaDescripcion = itemView.findViewById(R.id.textViewRutaDescripcion);
             textViewRutaUbicacion = itemView.findViewById(R.id.textViewRutaUbicacion);
         }
 

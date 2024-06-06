@@ -1,5 +1,6 @@
 package com.example.turismohuascom.ui.rutas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +42,15 @@ public class RutasFragment extends Fragment {
         adapter = new RutasAdapter(rutasList, new RutasAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Ruta ruta) {
-                // Manejar clic en la ruta
+                // Intent para abrir RutaDetailActivity
+                Intent intent = new Intent(getContext(), RutaDetailActivity.class);
+                intent.putExtra("titulo", ruta.getId());
+                intent.putExtra("descripcion", ruta.getDescripcion());
+                intent.putExtra("bano", ruta.getBano());
+                intent.putExtra("camping", ruta.getCamping());
+                intent.putExtra("imagen", ruta.getImagen());
+                intent.putExtra("direccion", ruta.getUbicacion());  // Pasar dirección
+                startActivity(intent);
             }
         });
         recyclerView.setAdapter(adapter);
@@ -52,9 +61,11 @@ public class RutasFragment extends Fragment {
                 for (DocumentSnapshot document : task.getResult()) {
                     Ruta ruta = new Ruta(
                             document.getId(),
-                            document.getString("descripcion"),
                             document.getString("direccion"),
-                            document.getString("imagen")
+                            document.getString("imagen"),
+                            document.getString("descripcion"),
+                            document.getString("baño"),
+                            document.getString("camping")
                     );
                     rutasList.add(ruta);
                 }
