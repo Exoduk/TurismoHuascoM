@@ -28,4 +28,10 @@
         android:name="com.example.turismohuascom.ui.favoritos.FavoritosFragment"
         android:label="@string/title_servicios"
         tools:layout="@layout/fragment_favoritos" />
+
+    <fragment
+        android:id="@+id/navigation_gastronomia"
+        android:name="com.example.turismohuascom.ui.gastronomia.GastronomiaFragment"
+        android:label="gastronomia"
+        tools:layout="@layout/fragment_gastronomia" />
 </navigation>

@@ -3,22 +3,28 @@
 
     <item
         android:id="@+id/navigation_inicio"
-        android:icon="@drawable/icono_inicio"
-        android:title="@string/title_inicio" />
+        android:icon="@drawable/logos_inicio"
+        android:title=""/>
 
     <item
         android:id="@+id/navigation_rutas"
-        android:icon="@drawable/icono_rutas"
-        android:title="@string/title_rutas" />
+        android:icon="@drawable/logos_turismo"
+        android:title=""/>
 
     <item
         android:id="@+id/navigation_servicios"
-        android:icon="@drawable/icono_servicios"
-        android:title="@string/title_servicios" />
+        android:icon="@drawable/logos_servicios"
+        android:title=""/>
 
     <item
-        android:id="@+id/navigation_favoritos"
-        android:icon="@drawable/icono_favoritos"
-        android:title="@string/title_favoritos" />
+        android:id="@+id/navigation_alojamientos"
+        android:icon="@drawable/logos_alojamiento"
+        android:title=""/>
+
+    <item
+        android:id="@+id/navigation_gastronomia"
+        android:icon="@drawable/logos_gastronomia"
+        android:title=""/>
+
 
 </menu>
