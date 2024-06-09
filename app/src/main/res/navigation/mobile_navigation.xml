@@ -34,4 +34,11 @@
         android:name="com.example.turismohuascom.ui.gastronomia.GastronomiaFragment"
         android:label="gastronomia"
         tools:layout="@layout/fragment_gastronomia" />
+
+    <fragment
+        android:id="@+id/navigation_alojamientos"
+        android:name="com.example.turismohuascom.ui.alojamiento.AlojamientoFragment"
+        android:label="alojamiento"
+        tools:layout="@layout/fragment_alojamientos" />
+
 </navigation>

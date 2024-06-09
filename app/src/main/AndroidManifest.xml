@@ -39,6 +39,7 @@
 
         <activity android:name=".ui.gastronomia.GastronomiaDetailActivity" />
 
+        <activity android:name=".ui.alojamiento.AlojamientoDetailActivity" />
 
 
     </application>
