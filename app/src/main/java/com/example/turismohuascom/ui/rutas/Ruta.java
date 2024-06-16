@@ -8,13 +8,11 @@ public class Ruta {
     private String bano;
     private String camping;
 
-    public Ruta(String id, String ubicacion, String imagen, String descripcion, String bano, String camping) {
+    public Ruta(String id, String ubicacion, String imagen, String descripcion) {
         this.id = id;
         this.ubicacion = ubicacion;
         this.imagen = imagen;
         this.descripcion = descripcion;
-        this.bano = bano;
-        this.camping = camping;
     }
 
     public String getId() {
@@ -33,11 +31,4 @@ public class Ruta {
         return descripcion;
     }
 
-    public String getBano() {
-        return bano;
-    }
-
-    public String getCamping() {
-        return camping;
-    }
 }

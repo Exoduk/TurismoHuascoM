@@ -117,8 +117,9 @@
 
     <ImageButton
         android:id="@+id/adminButton"
-        android:layout_width="21dp"
-        android:layout_height="21dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@null"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />

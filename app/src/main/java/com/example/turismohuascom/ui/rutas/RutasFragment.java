@@ -46,8 +46,6 @@ public class RutasFragment extends Fragment {
                 Intent intent = new Intent(getContext(), RutaDetailActivity.class);
                 intent.putExtra("titulo", ruta.getId());
                 intent.putExtra("descripcion", ruta.getDescripcion());
-                intent.putExtra("bano", ruta.getBano());
-                intent.putExtra("camping", ruta.getCamping());
                 intent.putExtra("imagen", ruta.getImagen());
                 intent.putExtra("direccion", ruta.getUbicacion());  // Pasar dirección
                 startActivity(intent);
@@ -63,9 +61,7 @@ public class RutasFragment extends Fragment {
                             document.getId(),
                             document.getString("direccion"),
                             document.getString("imagen"),
-                            document.getString("descripcion"),
-                            document.getString("baño"),
-                            document.getString("camping")
+                            document.getString("descripcion")
                     );
                     rutasList.add(ruta);
                 }

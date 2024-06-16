@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.turismohuascom.R;
@@ -26,6 +27,12 @@ public class FormularioServicioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_servicio);
+
+        // Ocultar la ActionBar
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
 
         etNombreServicio = findViewById(R.id.s_nombre_servicio);
         etCorreo = findViewById(R.id.s_correo);

@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.turismohuascom.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,6 +40,12 @@ public class  FormularioGastronomiaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_gastronomia);
+
+        // Ocultar la ActionBar
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
 
         etNombreAlojamiento = findViewById(R.id.eg_nombre_local);
         etCorreo = findViewById(R.id.eg_correo);

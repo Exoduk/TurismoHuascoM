@@ -45,7 +45,7 @@ public class InicioFragment extends Fragment {
 
     private void showPasswordDialog(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("Enter Admin Password");
+        builder.setTitle("Ingrese contraseña de adminstrador");
 
         // Configurar el input
         final EditText input = new EditText(getContext());

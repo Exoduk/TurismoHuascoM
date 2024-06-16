@@ -22,6 +22,7 @@ public class RutaDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ruta_detail);
 
+
         // Ocultar la ActionBar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -41,17 +42,14 @@ public class RutaDetailActivity extends AppCompatActivity {
 
         TextView textViewRutaTitulo = findViewById(R.id.textViewRutaTituloDetail);
         TextView textViewDetallesLugar = findViewById(R.id.textViewDetallesLugar);
-        TextView textViewPoseeBano = findViewById(R.id.textViewPoseeBano);
-        TextView textViewAptoCamping = findViewById(R.id.textViewAptoCamping);
         ImageView imageViewExtra = findViewById(R.id.imageViewExtra);
         TextView textViewDireccion = findViewById(R.id.textViewDireccion);  // Dirección
+        ImageView imageViewMapa = findViewById(R.id.iconoMapa);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             textViewRutaTitulo.setText(extras.getString("titulo"));
             textViewDetallesLugar.setText(extras.getString("descripcion"));
-            textViewPoseeBano.setText(extras.getString("bano"));
-            textViewAptoCamping.setText(extras.getString("camping"));
 
             // Cargar imagen usando Glide
             Glide.with(this)
@@ -61,7 +59,7 @@ public class RutaDetailActivity extends AppCompatActivity {
             textViewDireccion.setText(extras.getString("direccion"));
 
             // Añadir funcionalidad para abrir Google Maps al hacer clic en la dirección
-            textViewDireccion.setOnClickListener(new View.OnClickListener() {
+            imageViewMapa.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String address = extras.getString("direccion");

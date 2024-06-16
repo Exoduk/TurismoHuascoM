@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.turismohuascom.R;
@@ -15,6 +16,12 @@ public class AdminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+
+        // Ocultar la ActionBar
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
 
         Button btnAlojamientos = findViewById(R.id.btn_alojamientos);
         Button btnGastronomia = findViewById(R.id.btn_gastronomia);
