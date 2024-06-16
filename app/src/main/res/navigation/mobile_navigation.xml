@@ -9,7 +9,7 @@
         android:id="@+id/navigation_inicio"
         android:name="com.example.turismohuascom.ui.inicio.InicioFragment"
         android:label="@string/title_inicio"
-        tools:layout="@layout/fragment_inicio" />
+        tools:layout="@layout/fragment_inicio"/>
 
     <fragment
         android:id="@+id/navigation_rutas"
@@ -40,5 +40,6 @@
         android:name="com.example.turismohuascom.ui.alojamiento.AlojamientoFragment"
         android:label="alojamiento"
         tools:layout="@layout/fragment_alojamientos" />
+
 
 </navigation>
