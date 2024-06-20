@@ -1,0 +1,17 @@
+<!-- res/drawable/round_image.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap
+            android:src="@drawable/perfil"
+            android:gravity="center" />
+    </item>
+    <item>
+        <shape
+            android:shape="oval">
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="5dp"
+                android:color="@android:color/white" />
+        </shape>
+    </item>
+</layer-list>
