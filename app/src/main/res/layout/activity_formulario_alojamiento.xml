@@ -34,9 +34,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/icono_atras"
                 android:background="?attr/selectableItemBackground"
-                android:contentDescription="Botón de retroceso"
-                android:padding="8dp"
-                android:onClick="onClickBack" />
+                android:padding="8dp" />
 
             <!-- Título "Alojamiento" -->
             <TextView

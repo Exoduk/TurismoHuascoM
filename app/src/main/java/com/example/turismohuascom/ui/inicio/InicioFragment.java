@@ -3,12 +3,15 @@ package com.example.turismohuascom.ui.inicio;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -45,7 +48,16 @@ public class InicioFragment extends Fragment {
 
     private void showPasswordDialog(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("Ingrese contraseña de adminstrador");
+
+        // Crear un TextView personalizado para el título
+        TextView title = new TextView(getContext());
+        title.setText("Ingrese contraseña de administrador");
+        title.setPadding(20, 30, 20, 10);
+        title.setTextSize(18);  // Cambiar el tamaño de la letra aquí
+        title.setTypeface(null, Typeface.BOLD);  // Opcional: Para hacer el texto en negrita
+        title.setGravity(Gravity.CENTER);  // Opcional: Para centrar el título
+
+        builder.setCustomTitle(title);
 
         // Configurar el input
         final EditText input = new EditText(getContext());
@@ -68,6 +80,7 @@ public class InicioFragment extends Fragment {
 
         builder.show();
     }
+
 
     private void validatePassword(String password, View view) {
         if (password.equals("1234")) { // Reemplaza "1234" con la contraseña que quieras

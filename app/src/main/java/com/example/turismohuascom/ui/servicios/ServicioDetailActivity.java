@@ -23,6 +23,7 @@ public class ServicioDetailActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
+        hideNavigationBar();
 
         // Busca el botón de retroceso
         ImageButton backButton = findViewById(R.id.buttonBack);
@@ -49,6 +50,13 @@ public class ServicioDetailActivity extends AppCompatActivity {
             textViewCorreo.setText(extras.getString("correo"));
             textViewTelefono.setText(extras.getString("telefono"));
         }
+    }
+
+    private void hideNavigationBar() {
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }
 

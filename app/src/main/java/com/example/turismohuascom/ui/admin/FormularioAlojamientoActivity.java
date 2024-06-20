@@ -8,6 +8,7 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -54,9 +55,18 @@ public class FormularioAlojamientoActivity extends AppCompatActivity {
         ivImagen = findViewById(R.id.iv_imagen);
         Button btnSeleccionarImagen = findViewById(R.id.btn_seleccionar_imagen);
         Button btnGuardar = findViewById(R.id.btn_guardar);
+        ImageButton btnatras = findViewById(R.id.btn_back);
 
         db = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference("ImagenesAlojamientos");
+
+        btnatras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FormularioAlojamientoActivity.this, AdminActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnSeleccionarImagen.setOnClickListener(new View.OnClickListener() {
             @Override

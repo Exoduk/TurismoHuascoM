@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.turismohuascom.MainActivity;
 import com.example.turismohuascom.R;
 
 public class AdminActivity extends AppCompatActivity {
@@ -27,6 +29,15 @@ public class AdminActivity extends AppCompatActivity {
         Button btnGastronomia = findViewById(R.id.btn_gastronomia);
         Button btnRutas = findViewById(R.id.btn_rutas);
         Button btnServicios = findViewById(R.id.btn_servicios);
+        ImageButton btnAtras = findViewById(R.id.btn_back);
+
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnRutas.setOnClickListener(new View.OnClickListener() {
             @Override

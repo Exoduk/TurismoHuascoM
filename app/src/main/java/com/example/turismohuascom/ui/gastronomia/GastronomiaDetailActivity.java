@@ -28,6 +28,8 @@ public class GastronomiaDetailActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
+        hideNavigationBar();
+
         // Buscar el botón de retroceso
         ImageButton backButton = findViewById(R.id.buttonBack);
 
@@ -45,6 +47,7 @@ public class GastronomiaDetailActivity extends AppCompatActivity {
         TextView textViewDireccion = findViewById(R.id.textViewDireccion);  // Dirección
         TextView textViewTelefono = findViewById(R.id.textViewTelefono);  // Teléfono
         TextView textViewCorreo = findViewById(R.id.textViewCorreo);  // Correo electrónico
+        ImageView imageViewMapa = findViewById(R.id.iconoMapa);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -61,7 +64,7 @@ public class GastronomiaDetailActivity extends AppCompatActivity {
             textViewCorreo.setText(extras.getString("correo"));
 
             // Añadir funcionalidad para abrir Google Maps al hacer clic en la dirección
-            textViewDireccion.setOnClickListener(new View.OnClickListener() {
+            imageViewMapa.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String address = extras.getString("direccion");
@@ -73,6 +76,7 @@ public class GastronomiaDetailActivity extends AppCompatActivity {
             });
 
             // Añadir funcionalidad para llamar al teléfono al hacer clic en él
+            /*
             textViewTelefono.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -82,6 +86,7 @@ public class GastronomiaDetailActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+
 
             // Añadir funcionalidad para abrir el correo electrónico al hacer clic en él
             textViewCorreo.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +98,15 @@ public class GastronomiaDetailActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+
+            */
         }
+    }
+
+    private void hideNavigationBar() {
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

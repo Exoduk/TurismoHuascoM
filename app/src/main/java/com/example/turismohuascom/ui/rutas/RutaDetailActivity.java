@@ -29,6 +29,8 @@ public class RutaDetailActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
+        hideNavigationBar();
+
         // Busca el botón de retroceso
         ImageButton backButton = findViewById(R.id.buttonBack);
 
@@ -70,5 +72,12 @@ public class RutaDetailActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void hideNavigationBar() {
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

@@ -8,12 +8,15 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.turismohuascom.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -23,6 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,9 +58,18 @@ public class  FormularioGastronomiaActivity extends AppCompatActivity {
         ivImagen = findViewById(R.id.ivg_imagen);
         Button btnSeleccionarImagen = findViewById(R.id.btng_seleccionar_imagen);
         Button btnGuardar = findViewById(R.id.btng_guardar);
+        ImageButton btnatras = findViewById(R.id.btn_back_gastronomia);
 
         db = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference("ImagenesGastronomia");
+
+        btnatras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FormularioGastronomiaActivity.this, AdminActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnSeleccionarImagen.setOnClickListener(new View.OnClickListener() {
             @Override

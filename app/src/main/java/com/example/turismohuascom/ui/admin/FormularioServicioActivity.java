@@ -1,9 +1,11 @@
 package com.example.turismohuascom.ui.admin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -40,8 +42,17 @@ public class FormularioServicioActivity extends AppCompatActivity {
         etTelefono = findViewById(R.id.s_telefono);
         etDescripcion = findViewById(R.id.s_descripcion);
         Button btnGuardar = findViewById(R.id.btns_guardar);
+        ImageButton btnatras = findViewById(R.id.btn_back_servicio);
 
         db = FirebaseFirestore.getInstance();
+
+        btnatras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FormularioServicioActivity.this, AdminActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
