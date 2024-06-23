@@ -76,9 +76,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:textColor="@android:color/holo_blue_dark"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -100,7 +97,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/icono_mapa"
+                    app:srcCompat="@drawable/icono_mpg"
                     android:layout_marginLeft="30dp"/>
 
             </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.turismohuascom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         // Ocultar la barra de acción (ActionBar)
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
@@ -31,13 +33,29 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_inicio, R.id.navigation_servicios, R.id.navigation_rutas, R.id.navigation_favoritos)
+                R.id.navigation_inicio, R.id.navigation_servicios, R.id.navigation_rutas, R.id.navigation_alojamientos, R.id.navigation_gastronomia)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        NavigationUI.setupWithNavController(navView, navController);
+
+        navView.setOnNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.navigation_inicio) {
+                // Reiniciar la actividad para volver al fragmento de inicio
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                return true;
+            } else {
+                navController.navigate(itemId);
+                return true;
+            }
+        });
+
+        // Recibir el extra de las demás activities
+        int selectedItemId = getIntent().getIntExtra("selectedItemId", R.id.navigation_inicio);
+        navController.navigate(selectedItemId);
     }
 }

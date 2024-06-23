@@ -3,15 +3,22 @@ package com.example.turismohuascom.ui.alojamiento;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
+import com.example.turismohuascom.MainActivity;
 import com.example.turismohuascom.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class AlojamientoDetailActivity extends AppCompatActivity {
 
@@ -41,6 +48,8 @@ public class AlojamientoDetailActivity extends AppCompatActivity {
         imagenImageView = findViewById(R.id.imagenImageView);
         direccionTextView = findViewById(R.id.direccionTextView);
         ImageView imageViewMapa = findViewById(R.id.iconoMapa);
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+
 
         // Obtener los datos del Intent
         String titulo = getIntent().getStringExtra("titulo");
@@ -98,6 +107,21 @@ public class AlojamientoDetailActivity extends AppCompatActivity {
                 }
             });
         }
+
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                // Obtener el ID del elemento seleccionado
+                int id = item.getItemId();
+
+                // Iniciar MainActivity y pasar el ID del elemento seleccionado
+                Intent intent = new Intent(AlojamientoDetailActivity.this, MainActivity.class);
+                intent.putExtra("selectedItemId", id);
+                startActivity(intent);
+
+                return true;
+            }
+        });
     }
 
     // Método para ocultar la barra de navegación
@@ -107,4 +131,6 @@ public class AlojamientoDetailActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
     }
+
+
 }

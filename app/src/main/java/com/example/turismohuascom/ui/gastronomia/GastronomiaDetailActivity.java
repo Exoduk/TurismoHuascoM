@@ -3,6 +3,7 @@ package com.example.turismohuascom.ui.gastronomia;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -13,7 +14,11 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.example.turismohuascom.MainActivity;
 import com.example.turismohuascom.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class GastronomiaDetailActivity extends AppCompatActivity {
 
@@ -48,6 +53,7 @@ public class GastronomiaDetailActivity extends AppCompatActivity {
         TextView textViewTelefono = findViewById(R.id.textViewTelefono);  // Teléfono
         TextView textViewCorreo = findViewById(R.id.textViewCorreo);  // Correo electrónico
         ImageView imageViewMapa = findViewById(R.id.iconoMapa);
+        BottomNavigationView navView = findViewById(R.id.nav_view);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -101,6 +107,23 @@ public class GastronomiaDetailActivity extends AppCompatActivity {
 
             */
         }
+
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                // Obtener el ID del elemento seleccionado
+                int id = item.getItemId();
+
+                // Iniciar MainActivity y pasar el ID del elemento seleccionado
+                Intent intent = new Intent(GastronomiaDetailActivity.this, MainActivity.class);
+                intent.putExtra("selectedItemId", id);
+                startActivity(intent);
+
+                return true;
+            }
+        });
+
+
     }
 
     private void hideNavigationBar() {

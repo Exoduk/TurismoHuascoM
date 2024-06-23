@@ -8,7 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="naranja">#FFA500</color>
-    <color name="button_normal">#BDBDBD</color> <!-- Gris claro -->
-    <color name="button_pressed">#757575</color> <!-- Gris oscuro -->
+    <color name="button_normal">#BDBDBD</color>
+    <color name="plomo">#D7D7D7</color>
+    <color name="button_pressed">#757575</color>
 
 </resources>

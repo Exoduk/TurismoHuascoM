@@ -62,7 +62,7 @@
 
         <!-- Botón 1 -->
         <ImageButton
-            android:id="@+id/btn_paseos"
+            android:id="@+id/btn_rutas"
             android:layout_width="160dp"
             android:layout_height="100dp"
             android:layout_margin="8dp"
@@ -82,13 +82,13 @@
             android:background="@drawable/button_border"
             android:scaleType="centerCrop"
             android:src="@drawable/logos_alojamiento2"
-            app:layout_constraintStart_toEndOf="@+id/btn_paseos"
+            app:layout_constraintStart_toEndOf="@+id/btn_rutas"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- Botón 3 -->
         <ImageButton
-            android:id="@+id/btn_servicios_turisticos"
+            android:id="@+id/btn_servicios"
             android:layout_width="160dp"
             android:layout_height="100dp"
             android:layout_margin="8dp"
@@ -96,7 +96,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/logos_servicios2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_paseos"
+            app:layout_constraintTop_toBottomOf="@+id/btn_rutas"
             app:layout_constraintEnd_toStartOf="@+id/btn_gastronomia"
             app:layout_constraintBottom_toBottomOf="parent" />
 
@@ -109,7 +109,7 @@
             android:background="@drawable/button_border"
             android:scaleType="centerCrop"
             android:src="@drawable/logos_gastronomia2"
-            app:layout_constraintStart_toEndOf="@+id/btn_servicios_turisticos"
+            app:layout_constraintStart_toEndOf="@+id/btn_servicios"
             app:layout_constraintTop_toBottomOf="@+id/btn_alojamientos"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -117,8 +117,8 @@
 
     <ImageButton
         android:id="@+id/adminButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@null"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"

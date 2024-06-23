@@ -17,6 +17,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.turismohuascom.R;
 import com.example.turismohuascom.databinding.FragmentInicioBinding;
@@ -40,6 +42,39 @@ public class InicioFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 showPasswordDialog(v);
+            }
+        });
+
+        // Código para funcionalidades de los botones
+        ImageButton btnRutas = root.findViewById(R.id.btn_rutas);
+        btnRutas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToFragment(R.id.navigation_rutas);
+            }
+        });
+
+        ImageButton btnAlojamientos = root.findViewById(R.id.btn_alojamientos);
+        btnAlojamientos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToFragment(R.id.navigation_alojamientos);
+            }
+        });
+
+        ImageButton btnServicios = root.findViewById(R.id.btn_servicios);
+        btnServicios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToFragment(R.id.navigation_servicios);
+            }
+        });
+
+        ImageButton btnGastronomia = root.findViewById(R.id.btn_gastronomia);
+        btnGastronomia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToFragment(R.id.navigation_gastronomia);
             }
         });
 
@@ -81,6 +116,10 @@ public class InicioFragment extends Fragment {
         builder.show();
     }
 
+    private void navigateToFragment(int id) {
+        NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
+        navController.navigate(id);
+    }
 
     private void validatePassword(String password, View view) {
         if (password.equals("1234")) { // Reemplaza "1234" con la contraseña que quieras

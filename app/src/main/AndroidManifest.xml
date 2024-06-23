@@ -53,6 +53,14 @@
 
         <activity android:name=".ui.admin.FormularioServicioActivity" />
 
+        <activity android:name=".ui.admin.EliminarAlojamientoActivity" />
+
+        <activity android:name=".ui.admin.EliminarRutaActivity" />
+
+        <activity android:name=".ui.admin.EliminarGastronomiaActivity" />
+
+        <activity android:name=".ui.admin.EliminarServicioActivity" />
+
     </application>
 
 </manifest>
