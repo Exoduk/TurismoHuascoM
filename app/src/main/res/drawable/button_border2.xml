@@ -1,0 +1,8 @@
+<!-- res/drawable/button_border.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/naranjaoscuro" /> <!-- Fondo naranja oscuro -->
+    <stroke
+        android:width="3dp"
+        android:color="@color/naranjaoscuro" /> <!-- Borde del mismo color que el fondo -->
+    <corners android:radius="16dp" /> <!-- Bordes redondeados -->
+</shape>

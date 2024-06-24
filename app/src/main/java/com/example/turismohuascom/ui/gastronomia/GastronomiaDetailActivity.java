@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -47,18 +48,16 @@ public class GastronomiaDetailActivity extends AppCompatActivity {
         });
 
         TextView textViewGastronomiaTitulo = findViewById(R.id.textViewGastronomiaTituloDetail);
-        TextView textViewDetallesGastronomia = findViewById(R.id.textViewDetallesGastronomia);
         ImageView imageViewExtra = findViewById(R.id.imageViewExtra);
         TextView textViewDireccion = findViewById(R.id.textViewDireccion);  // Dirección
         TextView textViewTelefono = findViewById(R.id.textViewTelefono);  // Teléfono
         TextView textViewCorreo = findViewById(R.id.textViewCorreo);  // Correo electrónico
-        ImageView imageViewMapa = findViewById(R.id.iconoMapa);
         BottomNavigationView navView = findViewById(R.id.nav_view);
+        Button buttonMapa = findViewById(R.id.buttonVerEnMapa);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             textViewGastronomiaTitulo.setText(extras.getString("titulo"));
-            textViewDetallesGastronomia.setText(extras.getString("descripcion"));
 
             // Cargar imagen usando Glide
             Glide.with(this)
@@ -70,7 +69,7 @@ public class GastronomiaDetailActivity extends AppCompatActivity {
             textViewCorreo.setText(extras.getString("correo"));
 
             // Añadir funcionalidad para abrir Google Maps al hacer clic en la dirección
-            imageViewMapa.setOnClickListener(new View.OnClickListener() {
+            buttonMapa.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String address = extras.getString("direccion");

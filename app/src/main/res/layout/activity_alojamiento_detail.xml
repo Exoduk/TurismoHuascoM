@@ -75,34 +75,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:textColor="@android:color/holo_blue_dark"
                 android:layout_marginBottom="16dp"
                 android:textSize="16sp" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Haz clic aquí para ver en el mapa -->"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center_vertical"/>
-
-                <ImageView
-                    android:id="@+id/iconoMapa"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:srcCompat="@drawable/icono_mpg"
-                    android:layout_marginLeft="30dp"/>
-
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/buttonVerEnMapa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="80dp"
+        android:text="Haz click aquí para ver en el mapa"
+        android:backgroundTint="@color/naranjaoscuro"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"/>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -1,9 +1,11 @@
 package com.example.turismohuascom.ui.servicios;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -48,6 +50,7 @@ public class ServicioDetailActivity extends AppCompatActivity {
         TextView textViewCorreo = findViewById(R.id.textViewCorreo);
         TextView textViewTelefono = findViewById(R.id.textViewTelefono);
         BottomNavigationView navView = findViewById(R.id.nav_view);
+        Button buttonMapa = findViewById(R.id.buttonVerEnMapa);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -57,6 +60,19 @@ public class ServicioDetailActivity extends AppCompatActivity {
             textViewCorreo.setText(extras.getString("correo"));
             textViewTelefono.setText(extras.getString("telefono"));
         }
+
+
+        // Añadir funcionalidad para abrir Google Maps al hacer clic en la dirección
+        buttonMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String address = extras.getString("direccion");
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + Uri.encode(address));
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
 
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
