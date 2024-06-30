@@ -54,6 +54,7 @@ public class RutaDetailActivity extends AppCompatActivity {
         TextView textViewDireccion = findViewById(R.id.textViewDireccion);  // Dirección
         BottomNavigationView navView = findViewById(R.id.nav_view);
         Button buttonMapa = findViewById(R.id.buttonVerEnMapa);
+        //ImageButton buttonMapa2 = findViewById(R.id.buttonVerEnMapa);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {

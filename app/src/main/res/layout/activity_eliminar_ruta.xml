@@ -71,13 +71,14 @@
             android:padding="16dp">
 
             <!-- Spinner para seleccionar la ruta a eliminar -->
+
+            <!-- Botón para eliminar la ruta seleccionada -->
             <Spinner
                 android:id="@+id/spinner_rutas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="16dp" />
 
-            <!-- Botón para eliminar la ruta seleccionada -->
             <Button
                 android:id="@+id/btn_eliminar"
                 android:layout_width="match_parent"

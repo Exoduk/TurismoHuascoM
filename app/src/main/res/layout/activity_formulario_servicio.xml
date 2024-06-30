@@ -106,6 +106,19 @@
                     android:hint="Teléfono" />
 
                 <Button
+                    android:id="@+id/btnd_seleccionar_imagen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Seleccionar Imagen" />
+
+                <ImageView
+                    android:id="@+id/ivg_imagen"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone" />
+
+                <Button
                     android:id="@+id/btns_guardar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

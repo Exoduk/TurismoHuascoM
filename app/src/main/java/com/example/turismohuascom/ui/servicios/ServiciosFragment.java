@@ -36,6 +36,7 @@ public class ServiciosFragment extends Fragment {
 
         // Obtener datos de Firestore
         serviciosList = new ArrayList<>();
+
         adapter = new ServiciosAdapter(serviciosList, new ServiciosAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Servicio servicio) {
@@ -45,6 +46,7 @@ public class ServiciosFragment extends Fragment {
                 intent.putExtra("descripcion", servicio.getDescripcion());
                 intent.putExtra("direccion", servicio.getDireccion());
                 intent.putExtra("correo", servicio.getCorreo());
+                intent.putExtra("imagen", servicio.getImagen());
                 intent.putExtra("telefono", servicio.getTelefono());
                 startActivity(intent);
             }
@@ -60,7 +62,8 @@ public class ServiciosFragment extends Fragment {
                             document.getString("descripcion"),
                             document.getString("direccion"),
                             document.getString("correo"),
-                            document.getString("telefono")
+                            document.getString("telefono"),
+                            document.getString("imagen")
                     );
                     serviciosList.add(servicio);
                 }

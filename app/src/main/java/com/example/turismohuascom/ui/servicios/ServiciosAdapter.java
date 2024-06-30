@@ -3,11 +3,13 @@ package com.example.turismohuascom.ui.servicios;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.turismohuascom.R;
 
 import java.util.List;
@@ -38,6 +40,12 @@ public class ServiciosAdapter extends RecyclerView.Adapter<ServiciosAdapter.Serv
         Servicio servicio = serviciosList.get(position);
         holder.textViewServicioTitulo.setText(servicio.getId());
         holder.textViewServicioDireccion.setText(servicio.getDireccion());
+
+        // Cargar imagen usando Glide
+        Glide.with(holder.imageViewServicio.getContext())
+                .load(servicio.getImagen())
+                .into(holder.imageViewServicio);
+
         holder.bind(servicio, listener);
     }
 
@@ -47,11 +55,13 @@ public class ServiciosAdapter extends RecyclerView.Adapter<ServiciosAdapter.Serv
     }
 
     public static class ServicioViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageViewServicio;
         TextView textViewServicioTitulo;
         TextView textViewServicioDireccion;
 
         public ServicioViewHolder(@NonNull View itemView) {
             super(itemView);
+            imageViewServicio = itemView.findViewById(R.id.imageViewServicio);
             textViewServicioTitulo = itemView.findViewById(R.id.textViewServicioTitulo);
             textViewServicioDireccion = itemView.findViewById(R.id.textViewServicioDireccion);
         }

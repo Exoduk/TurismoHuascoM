@@ -19,17 +19,18 @@
         android:layout_marginTop="10dp"
         android:background="@android:color/transparent"
         android:src="@drawable/icono_atras"
-        android:scaleType="fitCenter"/>
+        android:scaleType="fitCenter" />
 
     <TextView
         android:id="@+id/textViewServicioTituloDetail"
         android:layout_width="wrap_content"
-        android:textColor="@color/white"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:textSize="28sp"
         android:textStyle="bold"
+        android:textAlignment="center"
         android:layout_marginTop="65dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -40,21 +41,25 @@
 
         <!-- Contenedor principal -->
         <LinearLayout
-            android:background="@color/plomo3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:padding="10dp">
 
+            <ImageView
+                android:id="@+id/imageViewServicio"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop" />
+
             <TextView
                 android:id="@+id/textViewDetallesServicio"
                 android:layout_width="wrap_content"
-                android:fontFamily="@font/angon"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/angon"
                 android:layout_centerHorizontal="true"
-                android:text="sdkdfhksjdfhkjshfkshkfhk"
-                android:textColor="@color/white"
                 android:layout_marginTop="16dp"
                 android:textSize="17sp" />
 
@@ -63,18 +68,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="sdkdfhksjdfhkjshfkshkfhk"
                 android:layout_marginTop="16dp"
-                android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textViewTelefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
                 android:layout_centerHorizontal="true"
-                android:text="sdkdfhksjdfhkjshfkshkfhk"
                 android:layout_marginTop="16dp"
                 android:textSize="16sp" />
 
@@ -83,9 +84,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:textColor="@android:color/holo_blue_dark"
-                android:text="sdkdfhksjdfhkjshfkshkfhk"
                 android:layout_marginBottom="16dp"
+                android:textColor="@android:color/holo_blue_dark"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -103,7 +103,7 @@
         android:backgroundTint="@color/naranjaoscuro"
         android:textColor="@color/white"
         android:textSize="14sp"
-        android:gravity="center"/>
+        android:gravity="center" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"

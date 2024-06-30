@@ -5,8 +5,6 @@ public class Ruta {
     private String ubicacion;
     private String imagen;
     private String descripcion;
-    private String bano;
-    private String camping;
 
     public Ruta(String id, String ubicacion, String imagen, String descripcion) {
         this.id = id;
