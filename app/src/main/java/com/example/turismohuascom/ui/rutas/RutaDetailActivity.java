@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -53,8 +52,8 @@ public class RutaDetailActivity extends AppCompatActivity {
         ImageView imageViewExtra = findViewById(R.id.imageViewExtra);
         TextView textViewDireccion = findViewById(R.id.textViewDireccion);  // Dirección
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        Button buttonMapa = findViewById(R.id.buttonVerEnMapa);
-        //ImageButton buttonMapa2 = findViewById(R.id.buttonVerEnMapa);
+        //Button buttonMapa = findViewById(R.id.buttonVerEnMapa);
+        ImageButton buttonMapa2 = findViewById(R.id.buttonVerEnMapa);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -69,7 +68,7 @@ public class RutaDetailActivity extends AppCompatActivity {
             textViewDireccion.setText(extras.getString("direccion"));
 
             // Añadir funcionalidad para abrir Google Maps al hacer clic en la dirección
-            buttonMapa.setOnClickListener(new View.OnClickListener() {
+            buttonMapa2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String address = extras.getString("direccion");
