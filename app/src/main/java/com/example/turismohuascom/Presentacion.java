@@ -1,19 +1,16 @@
 package com.example.turismohuascom;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.VideoView;
+import android.media.MediaPlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Presentacion extends AppCompatActivity {
-
-    private static final int Duracion = 2000; // 3 segundos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +28,17 @@ public class Presentacion extends AppCompatActivity {
         Button btnSkip = findViewById(R.id.btnSkip);
 
         // Establecer la ruta del video
-        Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.drawable.videoPresentacion);
+        Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.videopresentacion);
         videoView.setVideoURI(videoUri);
 
-        // Reproducir el video automáticamente
-        videoView.start();
+        // Listener para ajustar el video y reproducirlo automáticamente
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setVideoScalingMode(MediaPlayer.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING);
+                videoView.start();
+            }
+        });
 
         // Listener para saltar el video y abrir MainActivity
         btnSkip.setOnClickListener(new View.OnClickListener() {
