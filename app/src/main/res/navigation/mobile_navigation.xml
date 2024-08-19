@@ -41,5 +41,10 @@
         android:label="alojamiento"
         tools:layout="@layout/fragment_alojamientos" />
 
+    <fragment
+        android:id="@+id/navigation_desierto"
+        android:name="com.example.turismohuascom.ui.Desierto.DesiertoFragment"
+        android:label="DesiertoFragment" />
+
 
 </navigation>
