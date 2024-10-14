@@ -62,6 +62,9 @@
 
         <activity android:name=".ui.admin.EliminarServicioActivity" />
 
+        <activity android:name=".ui.admin.UpdateDesiertoFloridoActivity" />
+
+
         <activity android:name=".ui.Desierto.FullScreenImageActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 

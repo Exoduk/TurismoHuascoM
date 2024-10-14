@@ -33,6 +33,7 @@ public class AdminActivity extends AppCompatActivity {
         Button btnRutas2 = findViewById(R.id.btn_rutas2);
         Button btnServicios = findViewById(R.id.btn_servicios);
         Button btnServicios2 = findViewById(R.id.btn_servicios2);
+        Button btnUpdateDesierto = findViewById(R.id.btn_update_desierto);
         ImageButton btnAtras = findViewById(R.id.btn_back);
 
         btnServicios2.setOnClickListener(new View.OnClickListener() {
@@ -106,8 +107,13 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
-
-
-
+        // Nuevo botón para actualizar Desierto Florido
+        btnUpdateDesierto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminActivity.this, UpdateDesiertoFloridoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
